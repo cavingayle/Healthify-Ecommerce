@@ -16,11 +16,11 @@ function Navbar(props) {
   useEffect(() => {
   
     
-    // if (props.customerId === "") {
-    //   props.history.push("/");
-    // } else {
+    if (props.customerId === "") {
+      props.history.push("/");
+    } else {
       props.getCart()
-    // }
+    }
     
   }, [])
 
