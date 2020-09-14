@@ -69,9 +69,9 @@ app.use(cors()); //Blocks browser from restricting any data
 
 //Twilio 
 app.post('/send-text', (req, res) => {    
-    const { recipient, textmessage } = req.body;
+    const { textmessage } = req.body;
 
-console.log(recipient, textmessage)
+console.log( textmessage)
     //Send Text
     client.messages.create({
         body: textmessage,

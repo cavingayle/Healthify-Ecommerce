@@ -19,6 +19,8 @@ export default (
     <Route component={Register} path="/register" />
     <Route component={Admin} path="/admin" />
     <Route component={ProductGrid} path="/food" />
+    <Route component={ProductGrid} path="/beauty" />
+    <Route component={ProductGrid} path="/supplements" />
     <Route component={Contact} path="/contact" />
   </Switch>
 );

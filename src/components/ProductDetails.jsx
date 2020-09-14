@@ -52,11 +52,11 @@ function ProductDetails(props) {
 
           <Ingredients>
             {" "}
-            <span className="description"><strong >Ingredients:</strong> <br/>{details.description}</span>{" "}
+            <span className="description"><strong >Description:</strong> <br/>{details.description}</span>{" "}
                   </Ingredients>
                   <Price>
             {" "}
-            <span className="price">${details.price}</span>{" "}
+            <span className="price"><strong >Price:</strong> ${details.price}</span>{" "}
           </Price>
                   <div>
                       <Button onClick={() =>props.addToCart(details.product_id)}>

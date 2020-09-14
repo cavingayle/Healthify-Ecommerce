@@ -45,8 +45,7 @@ function Navbar(props) {
           <Menu isOpen={isOpen}>
         <MenuLink to="/food">Food</MenuLink>
         <MenuLink to='/beauty'>Beauty</MenuLink>
-        <MenuLink to="/supplments">Supplements</MenuLink>
-        <MenuLink to="/wine">Wine</MenuLink>
+        <MenuLink to="/supplements">Supplements</MenuLink>
         <MenuLink to="/contact">Contact</MenuLink>
         <MenuLink onClick={() => logout()}>Logout</MenuLink>
         <NavCart>
