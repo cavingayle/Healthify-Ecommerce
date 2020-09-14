@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { Link as ReactRouterDomLink, useLocation } from "react-router-dom";
+import { Link as ReactRouterDomLink } from "react-router-dom";
 
 
 import styled from "styled-components";
@@ -17,17 +17,17 @@ function Navbar(props) {
   
     
     // if (props.customerId === "") {
-    //   props.history.push("/welcome");
+    //   props.history.push("/");
     // } else {
-    //   props.getCart()
+      props.getCart()
     // }
     
-  }, [props.customerId, props.location.pathname])
+  }, [])
 
 
   const logout = () => {
     props.logout()
-    props.history.push('/welcome')
+    props.history.push('/')
   }
 
   return (
@@ -47,6 +47,7 @@ function Navbar(props) {
         <MenuLink to='/beauty'>Beauty</MenuLink>
         <MenuLink to="/supplments">Supplements</MenuLink>
         <MenuLink to="/wine">Wine</MenuLink>
+        <MenuLink to="/contact">Contact</MenuLink>
         <MenuLink onClick={() => logout()}>Logout</MenuLink>
         <NavCart>
           <span>{props.cart === [] ? 0 :props.cart.map(pro => pro.quantity).reduce((a,b) => (a + b ),0)}</span>
@@ -75,11 +76,12 @@ span{
     border-radius: 50%;
     z-index: -1;
 }
-@media (max-width: 767px) {
+@media (max-width: 1067px) {
+  display: none;
   span{
     position: relative;
-    /* display: none; */
-    top: 10px;
+    display: none;
+    /* top: 10px; */
     /* right: 27px; */
   }
   }
@@ -119,13 +121,16 @@ const Hamburger = styled.div`
   span {
     height: 2px;
     width: 25px;
-    background: #7b7fda;
+    background: black;
     margin-bottom: 4px;
     border-radius: 5px;
   }
 
-  @media (max-width: 767px) {
+  @media (max-width: 1067px) {
     display: flex;
+    .Header a:nth-child(4) {
+    display: none;
+}
   }
 
 `;
@@ -155,7 +160,7 @@ const Menu = styled.div`
   align-items: center;
   position: relative;
 
-  @media (max-width: 767px) {
+  @media (max-width: 1067px) {
     overflow: hidden;
     flex-direction: column;
     max-height: ${({ isOpen }) => (isOpen ? "300px" : "0")};

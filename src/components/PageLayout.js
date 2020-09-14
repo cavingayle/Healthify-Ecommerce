@@ -7,20 +7,21 @@ const Content = styled.main`
     /* margin: 0; */
     padding: 0 16px;
     box-sizing: border-box;
-    font-family: 'Open Sans';
+    font-family: 'Roboto';
     h1, h2, h3, h4, h5, h6{
-        font-family: 'Kaushan Script';
+        font-family: 'Roboto';
         
     }
 `;
 
 const Section = styled.section`
   box-shadow: 0 0 5px #ccc;
-  padding: 0 10px;
+  padding: 8px;
   max-width: 1200px;
-  width: 100%;
+  width: 80%;
   height: 80%;
-  margin: 0 auto;
+  margin: 0 auto 50px auto;
+  
 `
 export function PageLayout({children}) {
     return (

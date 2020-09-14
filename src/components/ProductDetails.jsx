@@ -2,22 +2,25 @@ import React, { useState, useEffect } from "react";
 import { Carousel } from "react-responsive-carousel";
 import "react-responsive-carousel/lib/styles/carousel.min.css";
 import axios from "axios";
-import { Container, Button } from "./footer/";
+import { Button } from "./styles";
 import styled from "styled-components";
 import { connect } from "react-redux";
-import { addToCart } from "../ducks/reducer";
+import { addToCart, getProducts } from "../ducks/reducer";
 import { PageLayout } from "./PageLayout";
 
 function ProductDetails(props) {
-  const [details, setDetails] = useState({});
+    const [details, setDetails] = useState({});
 
-  useEffect(() => {
+    useEffect(() => {
+        props.getProducts()
     axios.get(`/api/products/${props.match.params.id}`).then((res) => {
-      setTimeout(() => setDetails(res.data[0]), 500);
+        setTimeout(() => setDetails(res.data[0]), 500);
+        
     });
   }, []);
 
-  console.log(details);
+    
+
 
   return (
     <PageLayout>
@@ -41,28 +44,52 @@ function ProductDetails(props) {
           </Carousel>
         </CarouselWrapper>
         <DetailsContainer>
-          <div>
+          <Name>
             {" "}
+            
             <span className="name">{details.name}</span>{" "}
-          </div>
-          <div>
+          </Name>
+
+          <Ingredients>
             {" "}
-            <span className="price">{details.price}</span>{" "}
-          </div>
-          <div>
+            <span className="description"><strong >Ingredients:</strong> <br/>{details.description}</span>{" "}
+                  </Ingredients>
+                  <Price>
             {" "}
-            <span className="description">{details.description}</span>{" "}
-                  </div>
+            <span className="price">${details.price}</span>{" "}
+          </Price>
                   <div>
                       <Button onClick={() =>props.addToCart(details.product_id)}>
                           ADD TO CART
                       </Button>
                   </div>
-        </DetailsContainer>
-      </ProdContainer>
+                  
+              </DetailsContainer>
+              
+          </ProdContainer>
+          
     </PageLayout>
   );
 }
+
+const Name = styled.div`
+margin: 0 0 2em 0;
+font-weight: bold;
+font-size: 1.7em;
+line-height: 1.4;
+
+`
+const Ingredients = styled.div`
+margin: 0 0 2em 0;
+line-height: 1.4;
+
+`
+const Price = styled.div`
+margin: 0 0 2.5em 0;
+color: darkslategray;
+
+
+`
 
 const ProdContainer = styled.div`
   padding: 4em;
@@ -74,7 +101,7 @@ const ProdContainer = styled.div`
   justify-content: center;
   align-content: center;
   grid-auto-flow: row;
-  border: 1px solid #ccc;
+  /* border: 1px solid #ccc; */
 
 
   @media (max-width: 786px) {
@@ -92,6 +119,11 @@ const CarouselWrapper = styled.div`
   align-items: center;
   display: flex;
   justify-content: center;
+
+  @media (max-width: 786px) {
+   border-right: none;
+   border-bottom: 1px solid #ccc;
+  }
 `;
 
 const DetailsContainer = styled.div`
@@ -104,4 +136,6 @@ const DetailsContainer = styled.div`
   line-height: 1.3em;
 `;
 
-export default connect(null, { addToCart })(ProductDetails);
+const mapStateToProps = state => state
+
+export default connect(mapStateToProps, { addToCart, getProducts })(ProductDetails);

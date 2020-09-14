@@ -1,8 +1,6 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
-import styled from "styled-components";
 
-import { Container } from "./footer";
 
 import AdminProduct from "./AdminProduct";
 
@@ -184,8 +182,6 @@ const Admin = (props) => {
   );
 };
 
-const ContainerCol = styled(Container)`
 
-`;
 
 export default Admin;

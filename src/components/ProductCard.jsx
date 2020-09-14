@@ -1,8 +1,8 @@
-import React, {useState} from "react";
+import React from "react";
 import styled from "styled-components";
 import { connect } from "react-redux";
 import { addToCart, increaseCartQuantity,clearCart } from '../ducks/reducer'
-import { Link as ReactRouterDomLink, useLocation } from "react-router-dom";
+import { Link as ReactRouterDomLink} from "react-router-dom";
 
 const Card = styled.div`
   width: 200px;
@@ -66,6 +66,12 @@ font-weight: bold;
 }
 `;
 
+const Name = styled.h3`
+margin: 1em 0;
+`
+const Price = styled.h4`
+margin: .8em 0;
+`
 
 
 //Need to add in procut img source || Product name || prodcut Price ||
@@ -86,8 +92,8 @@ function ProductCard(props) {
       <Button onClick={() => addToCart(product_id)}>Add to cart</Button>
       <ProdLink to={`/p/${product_id}`}>
       <CardDetails>
-        <h3 >{name}</h3>
-          <h4>${price}</h4>
+        <Name >{name}</Name>
+          <Price>${price}</Price>
         </CardDetails>
         </ProdLink>
         

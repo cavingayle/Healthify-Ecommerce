@@ -1,11 +1,11 @@
-import React, { useState } from 'react'
+import React from 'react'
 import { useFormik } from 'formik'
 import { connect } from "react-redux";
 import * as Yup from 'yup'
 import axios from 'axios'
 import { updateUser } from '../ducks/reducer'
-import styled, { css } from 'styled-components'
-import { Button, Form, Container, Input, Error, InvButton } from './footer'
+import styled from 'styled-components'
+import { Form, Container, Input, Error, InvButton } from './styles'
 
 function Auth(props) {
     const {handleSubmit, handleChange, values, touched, errors, handleBlur} = useFormik({
@@ -41,7 +41,7 @@ console.log(values.login, values.password)
   <ColorContainer>
     <Form onSubmit={handleSubmit}>
         <header>
-          <h1>Login</h1>
+          <Title>Login</Title>
           
       </header>
       <label htmlFor="email">Email</label>
@@ -75,7 +75,11 @@ console.log(values.login, values.password)
 }
 
 const ColorContainer = styled(Container)`
-background: #FCE5CF;
+background: #f8f8ff;
+`
+const Title = styled.h1`
+text-align: center;
+margin: .8em 0;
 `
 
 

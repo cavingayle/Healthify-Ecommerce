@@ -1,8 +1,7 @@
-import React, {useEffect, useState} from "react";
+import React, {useEffect} from "react";
 import styled from "styled-components";
 import ProductCard from "./ProductCard";
 import { connect } from "react-redux";
-import { Link } from "react-router-dom";
 import {getProducts} from '../ducks/reducer'
 import { PageLayout } from "./PageLayout";
 

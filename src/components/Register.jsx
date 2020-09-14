@@ -1,9 +1,9 @@
-import React, { useState } from "react";
+import React from "react";
 import { useFormik } from "formik";
 import * as Yup from "yup";
 import axios from "axios";
 import styled from 'styled-components'
-import { Button, Form, Container, Input, Error } from './footer'
+import { Button, Form, Container, Input, Error } from './styles'
 import { connect } from 'react-redux'
 import { updateUser } from '../ducks/reducer'
 
@@ -47,7 +47,9 @@ function Register(props) {
   return (
     <ColorContainer>
     <Form onSubmit={handleSubmit}>
-      <header></header>
+        <header>
+          <Title>Register</Title>
+      </header>
       <label htmlFor="email">Email:</label>
       <Input
         value={values.email}
@@ -101,9 +103,12 @@ function Register(props) {
 }
 
 const ColorContainer = styled(Container)`
-background: #FCE5CF;
+background: #f8f8ff;
 `
-
+const Title = styled.h1`
+text-align: center;
+margin: .8em 0;
+`
 const mapStateToProps = state => state
 
 export default connect(mapStateToProps, {updateUser})(Register);

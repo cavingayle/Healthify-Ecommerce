@@ -6,6 +6,7 @@ export * from './styles/Container'
 export * from './styles/Input'
 export * from './styles/Error'
 export * from './styles/InvButton'
+export * from './styles/TextArea'
 
 export default function Footer({ children, ...restProps }) {
     return <Container {...restProps}>{children}</Container>

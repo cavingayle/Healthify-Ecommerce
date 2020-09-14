@@ -17,6 +17,7 @@
     "express-session": "^1.17.1",
     "formik": "^2.1.5",
     "massive": "^6.6.0",
+    "nodemailer": "^6.4.11",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
     "react-redux": "^7.2.1",
@@ -24,11 +25,14 @@
     "react-router-dom": "^5.2.0",
     "react-scripts": "3.4.3",
     "react-stripe-checkout": "^2.6.3",
+    "react-styled-toggle": "^1.0.18",
     "redux": "^4.0.5",
     "redux-promise-middleware": "^6.1.2",
     "socket.io": "^2.3.0",
+    "socket.io-client": "^2.3.0",
     "stripe": "^8.93.0",
     "styled-components": "^5.1.1",
+    "twilio": "^3.49.1",
     "yup": "^0.29.3"
   },
   "scripts": {

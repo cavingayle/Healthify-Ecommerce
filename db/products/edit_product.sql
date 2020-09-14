@@ -7,8 +7,7 @@ img_three =$4,
 img_four = $5,
 price = $6,
 description = $7,
-type =$9 
-
+type = $9 
 WHERE product_id = $8;
 
 SELECT *
