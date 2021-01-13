@@ -5,14 +5,14 @@ A Food based ecommerce React application used to order healthy foods and snacks.
 
 #### Live Project
 
-[Find the project live in action here](http://shaundays-weather.surge.sh/)
+[Find the project live in action here](http://http://142.93.253.118:4003/#/)
 
 
 ## Project Screen Shots
 ![](Healthify1.gif)
 
 
-## Reflection
+
 
 
 
